@@ -4,11 +4,11 @@ import cv2
 import numpy as np
 
 # Load the original image to get the height and weight for reconstruction
-image = cv2.imread("assignment_1.jpg")
+image = cv2.imread("InputData/assignment_1.jpg")
 h,w,c = image.shape
 print(h,w)
 # open assignment_1_cartesian_coords.txt in read mode
-file = open("assignment_1_cartesian_coords.txt","r")
+file = open("InputData/assignment_1_cartesian_coords.txt","r")
 c = 0
 col = []
 row = []
@@ -28,7 +28,7 @@ print(y)
 # print(len(col))
 file.close()
 
-file1 = open("RGB_values.txt","r")
+file1 = open("InputData/RGB_values.txt","r")
 val = []
 for f in file1:
     print(f)
@@ -52,7 +52,7 @@ while i < len(row):
 
 
 
-cv2.imwrite('r.jpg', image)
+cv2.imwrite('Output/r.jpg', image)
 cv2.imshow("image", image)
 cv2.waitKey(0)
 

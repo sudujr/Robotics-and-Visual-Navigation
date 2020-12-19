@@ -15,7 +15,7 @@ def hist(image):
     return np.asarray(h) 
 
 # Load the Image Using cv2.imread
-img = cv2.imread("assignment2_part1.jpg")
+img = cv2.imread("InputData/assignment2_part1.jpg")
 rgb_image = copy.deepcopy(img)
 b,g,r = cv2.split(rgb_image)
 bh = hist(b)
@@ -24,7 +24,7 @@ rh = hist(r)
 h,w,c = rgb_image.shape
 
 # extraxt the coordinates and the correct pixel values from coords.txt and store them in a list
-file = open("coords.txt","r")
+file = open("InputData/coords.txt","r")
 c = 0
 col = []
 row = []
@@ -66,7 +66,7 @@ gH = hist(g)
 rH = hist(r)
 
 output = cv2.merge((b,g,r))
-cv2.imwrite('Denoised_Image_1.jpg',output)
+cv2.imwrite('Output/Denoised_Image_1.jpg',output)
 
 f, a = plt.subplots(1, 2, gridspec_kw={'width_ratios': [50,50]})
 f.set_figheight(4)
@@ -82,7 +82,7 @@ a[1].plot(gH,color='g')
 a[1].plot(rH,color='r')
 a[1].title.set_text('Denoised Image Histogram')
 f.tight_layout()
-plt.savefig('HistofG&Dimages_1.jpg', dpi=300, bbox_inches='tight')
+plt.savefig('Histograms/HistofG&Dimages_1.jpg', dpi=300, bbox_inches='tight')
 plt.show()
 
 
@@ -99,7 +99,7 @@ ax[2].title.set_text('Red Channel')
 figure.tight_layout()
 figure.subplots_adjust(top=0.88)
 figure.suptitle('Plot of Values Obtained from subtracting noisy pixel and original pixel values')
-plt.savefig('Analysis_1.jpg', dpi=300)
+plt.savefig('Analysis/Analysis_1.jpg', dpi=300)
 plt.show()
 
 print(mean_b,mean_g,mean_r)
@@ -124,7 +124,7 @@ c[2].title.set_text('Red Channel')
 p.tight_layout()
 p.subplots_adjust(top=0.88)
 p.suptitle('Plot of Values Obtained by generating gaussian noise with obtained mean and variance')
-plt.savefig('proof_1.jpg', dpi=300)
+plt.savefig('Validation/proof_1.jpg', dpi=300)
 plt.show()
 
 

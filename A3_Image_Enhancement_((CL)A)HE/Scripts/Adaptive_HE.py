@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 import copy
 
 #Load the given image
-givenImage = cv2.imread('assignment3.jpg')
+givenImage = cv2.imread('/home/sudharshan/Documents/DeepEigenProjects/A3_Image_Enhancement_((CL)A)HE/Input/assignment3.jpg')
 
 # Split the image into b,g,r
 b,g,r = cv2.split(givenImage)
@@ -47,47 +47,7 @@ def nHist(image,a,b):
     for i in range(a):
         for j in range(b):
             hist[image[i,j]]+= 1
-    return np.asarray(hist) 
-
-def clip_histogram(nhist,clip):
-    """
-        Function to replace the overshoot by limit value
-    """
-
-    over_shoot = nhist[nhist > clip]
-    count = 256 - len(nhist[nhist >= clip])
-    extra = over_shoot.sum() - clip*len(over_shoot)
-    nhist[nhist > clip] = clip 
-    return nhist, count, extra
-
-
-def rHist(nhist, clip,count,extra):
-
-    """
-        Function for Histogram redistribution
-
-    """
-
-    if count == 0:
-        return nhist     
-    else:
-        redb = int(extra/count)
-        if redb == 0:
-            redb = 1
-        i = 0
-        while(i < 256):
-            if nhist[i] < (clip - redb):
-                nhist[i]+= redb
-                extra-= redb
-                count-=1
-            elif nhist[i] < clip:
-                extra-= clip - nhist[i]
-                nhist[i] = clip
-                count-= 1
-            i+=1
-        return rHist(nhist,clip,count,extra)
-
-    
+    return np.asarray(hist) * 1.0 / (a * b)
 
 def cdFunction(nhist):
     """
@@ -118,17 +78,13 @@ def setTransferFunction(image,n,a,b):
     return 2d list contatining transferfunction of each subimage
 
     """
-    clip = 4 * int(a*b/256)
+
     G = imageCrop(image,a,b,n)
     T = []
     for i in range(n):
         t = []
         for j in range(n):
             nhist = nHist(G[i][j],a,b)
-            nhist, count, extra = clip_histogram(nhist,clip)
-            if count != 256:
-                nhist= rHist(nhist,clip,count,extra)
-            nhist = nhist * 1.0 / (a*b)
             cdf = cdFunction(nhist)
             t.append(np.uint8( 255 * cdf))
         T.append(t)
@@ -221,7 +177,7 @@ def ahe(image,n):
             x = 2*(j - ((lj * b) + midb)) / b 
             vnew[i,j] = int((T[li][lj][image[i,j]]))
     return vnew
-n=8
+n=4
 h,w = b.shape
 bh = h*w*nHist(b,h,w)
 gh = h*w*nHist(g,h,w)
@@ -249,10 +205,10 @@ axs[0].imshow(givenImage)
 axs[0].title.set_text('Given Image')
 
 axs[1].imshow(equalizedImage)
-axs[1].title.set_text('CLAHE Image')
+axs[1].title.set_text('Adaptive Equalized Image')
 
 fig.tight_layout()
-plt.savefig('assignment_clahe_images.jpg', dpi=300, bbox_inches='tight')
+plt.savefig('/home/sudharshan/Documents/DeepEigenProjects/A3_Image_Enhancement_((CL)A)HE/InputandOutput/assignment_ahe_images.jpg', dpi=300, bbox_inches='tight')
 plt.show()
 
 
@@ -268,11 +224,9 @@ a[0].title.set_text('Given Image Histogram')
 a[1].plot(bH,color='b')
 a[1].plot(gH,color='g')
 a[1].plot(rH,color='r')
-a[1].title.set_text('CLAHE Image Histogram')
+a[1].title.set_text('Adpative Histogram Equalized Image Histogram')
 fig.tight_layout()
-plt.savefig('assignment_clahe_hist.jpg', dpi=300, bbox_inches='tight')
+plt.savefig('/home/sudharshan/Documents/DeepEigenProjects/A3_Image_Enhancement_((CL)A)HE/Histograms/assignment_ahe_hist.jpg', dpi=300, bbox_inches='tight')
 
 plt.show()
-
-
 

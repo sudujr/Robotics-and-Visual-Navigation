@@ -40,7 +40,7 @@ def histEqualization(image):
 
 
 # Load the Image and Store it in variable givenImage
-givenImage = cv2.imread("assignment3.jpg")
+givenImage = cv2.imread("/home/sudharshan/Documents/DeepEigenProjects/A3_Image_Enhancement_((CL)A)HE/Input/assignment3.jpg")
 
 #cv2.imshow("Image", givenImage)
 #cv2.waitKey(0)
@@ -67,7 +67,7 @@ axs[1].imshow(equalizedImage)
 axs[1].title.set_text('Histogram Equalized Image')
 
 fig.tight_layout()
-plt.savefig('assignment_he_images.jpg', dpi=300, bbox_inches='tight')
+plt.savefig('/home/sudharshan/Documents/DeepEigenProjects/A3_Image_Enhancement_((CL)A)HE/InputandOutput/assignment_he_images.jpg', dpi=300, bbox_inches='tight')
 plt.show()
 
 
@@ -85,7 +85,7 @@ a[1].plot(gH,color='g')
 a[1].plot(rH,color='r')
 a[1].title.set_text('Histogram Equalized Image Histogram')
 fig.tight_layout()
-plt.savefig('assignment_he_hist.jpg', dpi=300, bbox_inches='tight')
+plt.savefig('/home/sudharshan/Documents/DeepEigenProjects/A3_Image_Enhancement_((CL)A)HE/Histograms/assignment_he_hist.jpg', dpi=300, bbox_inches='tight')
 
 plt.show()
 

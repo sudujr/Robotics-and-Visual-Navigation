@@ -143,7 +143,7 @@ plt.savefig('proof_2.jpg', dpi=300)
 plt.show()
 
 
-median = cv2.medianBlur(rgb_image,3)
+median = cv2.medianBlur(rgb_image,5)
 cv2.imshow('g',median)
 cv2.waitKey(0)
 hb = hist(median[:,:,0])
@@ -153,10 +153,9 @@ plt.plot(hb)
 plt.plot(hg)
 plt.plot(hr)
 plt.show()
-
-
-
-
-
+print(type(np.log(rgb_image)))
+geomean2 = np.uint8(np.exp(cv2.boxFilter(np.array(np.log(rgb_image)), -1, (3, 3))))
+cv2.imshow('2', geomean2)
+cv2.waitKey()
 
 

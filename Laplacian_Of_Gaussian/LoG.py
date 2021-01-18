@@ -47,15 +47,15 @@ class Util:
         pad_size = int(filter_size/2)
         return cv2.copyMakeBorder( org_image, pad_size, pad_size, pad_size, pad_size, cv2.BORDER_CONSTANT)
 
-class FistOrderEdgeDetection:
+class LOGEdgeDetection:
 
     """
-        Responsibilty : Perform First order derivative based edge detection
+        Responsibilty : Perform Laplacian of Gaussian based edge detection
         Functions:
             imageBlur() --> Smoothens the image
             imageConvolve() --> Convolves the given image with the Filter 
             imageGradientMagnitude() --> Computes magnitude of gradient 
-            def edgeScaling() --> Identifies edge points from the gradient based on human set threshold
+            zeroCrossing() --> Identifies edge points from the gradient based on human set threshold
     """
     
     def imageBlur(self,image, filterSize, sigma_i, sigma_s):

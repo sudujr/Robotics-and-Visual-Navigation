@@ -1,9 +1,9 @@
-from LoG import Util, FistOrderEdgeDetection
+from LoG import Util, LOGEdgeDetection
 import numpy as np 
 
 def main():
     util = Util()
-    ed = FistOrderEdgeDetection()
+    ed = LOGEdgeDetection()
     gray_image = util.imageRead("Input/assignment_9.jpg")
     #util.imageDisplay("Input 1",gray_image)
     bf_image = ed.imageBlur(gray_image, 11, 100, 100)

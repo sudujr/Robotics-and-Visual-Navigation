@@ -27,7 +27,7 @@ def process_frame(image):
 
     for p in kp:
         u,v = map(lambda x: int(round(x)), p[0])
-        cv2.circle(frame,(u,v), color=(255, 0, 0), radius = 3)
+        cv2.circle(frame,(u,v), color=(0, 255, 0), radius = 3)
     disp.view(frame)
 
 if __name__ == '__main__':

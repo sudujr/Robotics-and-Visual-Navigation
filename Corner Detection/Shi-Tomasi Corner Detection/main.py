@@ -8,9 +8,9 @@ def main():
     scd = ShiTomasiCornerDetection()
     # SCRATCH IMPLEMENTATION
     # Load the Image as Gray Scale Image and Store the result in gray_image and Color image in bgr_image
-    bgr_image = util.imageReadBGR('assignment_13.jpg')
+    bgr_image = util.imageReadBGR('Input/assignment_13.jpg')
     bgr_image_copy = copy.deepcopy(bgr_image)
-    gray_image = util.imageReadGray('assignment_13.jpg')
+    gray_image = util.imageReadGray('Input/assignment_13.jpg')
 
     # Compute the Dimensions of gray scale Image
     m,n = gray_image.shape
@@ -20,10 +20,10 @@ def main():
     M = scd.nonMaximumSuppression(M, m, n)
     kps = scd.goodFeatures(M)
     # visualize the Corner points in the image
-    bgr_image = scd.visualizeCornerPoints(kps,bgr_image)
-    util.imageDisplay(bgr_image,"OUTPUT SHI TOMASI")            
+    image = scd.visualizeCornerPoints(kps,bgr_image)
+    util.imageDisplay(image,"OUTPUT SHI TOMASI")            
     #Save the imag in the system
-    util.imageWrite(bgr_image, "output_Shi_Tomasi.jpg")
+    util.imageWrite(bgr_image, "output/output_Shi_Tomasi.jpg")
     # OPENCV IMPLEMENTATION
     # refer https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_feature2d/py_shi_tomasi/py_shi_tomasi.html
     corners = cv2.goodFeaturesToTrack(gray_image,500,0.01,10)
@@ -34,7 +34,7 @@ def main():
     # visualize the Corner points in the image
     util.imageDisplay(bgr_image_copy,"OUTPUT HARRIS CV")            
     #Save the imag in the system
-    util.imageWrite(bgr_image_copy, "output_Shi_Tomasi_cv.jpg")
+    util.imageWrite(bgr_image_copy, "Output/output_Shi_Tomasi_cv.jpg")
 
 if __name__ == '__main__':
     main()

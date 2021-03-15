@@ -14,7 +14,8 @@ class Util:
         Functions:
             imageReadBGR() --> reads the image from the systema and returns a multi dimensional array (3 channel array)
             imageReadGray() --> Reads the image from the system and gives us an gray scale image array to perform operation
-            imageStoreDisplay() --> Displays the output and stores the Reslut
+            imageWrite() --> Save the output in system
+            imageDisplay() --> Display the output
     """
 
     def imageReadBGR(self,fileName):
@@ -56,6 +57,8 @@ class ShiTomasiCornerDetection:
         Functions :
             __init__() --> Initialize Filter , weights, k and threshold values
             shiResponseScoreMatrix() --> Function to compute the harris corner score for each pixel neighbourhood
+            cornerDistance() --. Comnpute Distance between two corners
+            goodFeatures() --> to select the best features out of all
             nonMaximumSuppression() --> Function to remove false positives
             visualizeCornerPoints() --> Function to draw circle on the detected corners in 
 
@@ -68,6 +71,10 @@ class ShiTomasiCornerDetection:
         self.threshold = 1000
 
     def shiResponseScoreMatrix(self, gray_image):
+        """
+            @args gray_image --> Input Grayscale Image
+            @return M --> Shi Tomasi Corner Response Matrix
+        """
         Ix = signal.convolve2d(gray_image, self.Sx, boundary='symm', mode='same')
         Iy = signal.convolve2d(gray_image, self.Sy, boundary='symm', mode='same')
         Ixx = Ix * Ix 
@@ -85,6 +92,11 @@ class ShiTomasiCornerDetection:
         return M
 
     def nonMaximumSuppression(self, M, m, n):
+        """
+            @args : M --> Shi tomasi Corner Response matrix
+            @args : m,n --> Shape of matrix
+            @return : M --> shi tomasi Corner Response Matrix after removing false possitives
+        """
         for r in range(1,m-1):
             for c in range(1, n-1):
                 patch = M[r-1:r+2, c-1:c+2]
@@ -93,9 +105,19 @@ class ShiTomasiCornerDetection:
         return M
 
     def cornerDistance(self, x1, x2):
+        """
+            @args: x1, x2 --> Coordinates
+            @return Eucledian Distance
+        """
         return np.hypot(x1[0]-x2[0],x1[1]-x2[1])
 
-    def goodFeatures(self, M, max_features=500, min_distance = 100):
+    def goodFeatures(self, M, max_features=500, min_distance = 10):
+        """
+            @args: M --> Shi tomasi Corner Response matrix
+            @args: max_features --> No of corner points required
+            @min_distance --> Distance between the features
+            @return --> List containing best corner points
+        """
         corners = []
         for i in range(M.shape[0]):
             for j in range(M.shape[1]):
@@ -112,6 +134,12 @@ class ShiTomasiCornerDetection:
         return best_corners
 
     def visualizeCornerPoints(self, kps, bgr_image):
+        """
+            @args: kps --> list contatining best corner points in the image
+            @args: bgr_image --> Input RGB image
+            @return --> RGB image marked with corner points
+            
+        """
         for p in kps:
             cv2.circle(bgr_image,(p[1],p[0]), color=(0, 0, 255), radius = 3)
         return bgr_image

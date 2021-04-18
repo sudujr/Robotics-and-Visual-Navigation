@@ -41,7 +41,7 @@ def cdfunction(hist):
 
 ## RESULTS 
 
-<p align="center"><img width=80% src="https://github.com/sudujr/Robotics-and-Visual-Navigation/tree/main/Contrast%20Limited%20Adaptive%20Histogram%20Equalization/InputandOutput/HE"></p>
+<p align="center"><img width=80% src="https://github.com/sudujr/Robotics-and-Visual-Navigation/blob/main/Contrast%20Limited%20Adaptive%20Histogram%20Equalization/InputandOutput/HE/NightVision_HE_IMAGES.jpg"></p>
 <p align="center"><img width=80% src="https://github.com/sudujr/Robotics-and-Visual-Navigation/blob/main/Contrast%20Limited%20Adaptive%20Histogram%20Equalization/Media/a9bc9c907620e8a74f6239a33d47bf90.jpg"></p>
 
 

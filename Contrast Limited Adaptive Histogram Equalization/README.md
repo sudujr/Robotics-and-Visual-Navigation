@@ -6,4 +6,6 @@
 
 # CONTRAST ENHANCEMENT USING HISTOGRAM ![Python](https://img.shields.io/badge/python-v3.6+-blue.svg) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-## Histogram Definition
+## Overview 
+
+Images are captured by differnt types of camera's under differnent physical and atmospheric conditions. If the Image is shot under low light and less contrast conditions it will not be able to provide any useful information for which the Image is used (Computer Vision, Photography, Etc.,)

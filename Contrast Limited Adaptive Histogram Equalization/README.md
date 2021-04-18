@@ -13,4 +13,30 @@ Images are captured by differnt types of camera's under differnent physical and 
 - The function should be ```Single Valued``` and ```Monotonically Increasing``` from [0,1]
 - ```Domain(T) = [0,1]``` & ```Range(T) = [0,1]```
 
+## Histogram Equalization 
+
+- Step 1 :  Compute Normalized Histogram 
+```
+def nHist(image):
+    m, n = image.shape
+    h = [0] * 256
+    for i in range(m):
+        for j in range(n):
+            h[image[i,j]]+= 1
+
+    return np.asarray(h) * 1.0 / (m * n)
+```
+- Step 2 : Compute Cumulative Distribution Function for Each bins in an Normalized Hitogram
+```
+def cdfunction(hist):
+    cdfi = 0
+    c = [0.0] * 256
+    for i in range(len(hist)):
+        cdfi+= hist[i]
+        c[i] = cdfi 
+    return np.array(c)
+```
+- Step 3 : Compute Transformation FUnction ```T = np.uint8(255 * cdf) ```
+- Step 4 ; Transform the Pixel in an image based on the following relation ```EnhanceImage = T[Original Image]```
+
 

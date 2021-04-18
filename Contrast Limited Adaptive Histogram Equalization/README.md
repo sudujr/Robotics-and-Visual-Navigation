@@ -60,4 +60,4 @@ def cdfunction(hist):
 ## RESULTS 
 
 <p align="center"><img width=80% src="https://github.com/sudujr/Robotics-and-Visual-Navigation/blob/main/Contrast%20Limited%20Adaptive%20Histogram%20Equalization/InputandOutput/NAHE/NightVision_NAHE_IMAGES.jpg"></p>
-<p align="center"><img width=80% src="https://github.com/sudujr/Robotics-and-Visual-Navigation/blob/main/Contrast%20Limited%20Adaptive%20Histogram%20Equalization/Histograms/NAHE/NightVision_NAHE_HIST.jpg"></p>
+<p align="center"><img width=80% src="https://github.com/sudujr/Robotics-and-Visual-Navigation/blob/main/Contrast%20Limited%20Adaptive%20Histogram%20Equalization/Histograms/N-AHE/NightVision_NAHE_HIST.jpg"></p>

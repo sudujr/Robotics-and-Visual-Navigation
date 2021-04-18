@@ -44,5 +44,10 @@ def cdfunction(hist):
 <p align="center"><img width=80% src="https://github.com/sudujr/Robotics-and-Visual-Navigation/blob/main/Contrast%20Limited%20Adaptive%20Histogram%20Equalization/InputandOutput/HE/NightVision_HE_IMAGES.jpg"></p>
 <p align="center"><img width=80% src="https://github.com/sudujr/Robotics-and-Visual-Navigation/blob/main/Contrast%20Limited%20Adaptive%20Histogram%20Equalization/Histograms/HE/NightVision_HE_HIST.jpg"></p>
 
+## Inference
+- Histogram Equalization Distributes the Histogram of Given Image so that the Pixels are distributed to Increase the contrast of the output Image
+- Global Context of Image is Considered ( Every Pixel is manipulated by considering the pixel distribution of the Entire Image)
+- While Enhancing the contrast of the Images, This Global Conext methods also suffers from Noise (Noises will also be enhanced) Example : Salt & Pepper Noise
+- Certain Region will be to bright as a result of Noise Presence
 
 

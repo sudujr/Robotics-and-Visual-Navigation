@@ -13,7 +13,7 @@ Images are captured by differnt types of camera's under differnent physical and 
 - The function should be ```Single Valued``` and ```Monotonically Increasing``` from [0,1]
 - ```Domain(T) = [0,1]``` & ```Range(T) = [0,1]```
 
-## Histogram Equalization 
+## Histogram Equalization (HE)
 
 - Step 1 :  Compute Normalized Histogram 
 ```

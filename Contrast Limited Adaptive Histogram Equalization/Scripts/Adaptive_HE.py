@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 import copy
 
 #Load the given image
-givenImage = cv2.imread('/home/sudharshan/Documents/DeepEigenProjects/A3_Image_Enhancement_((CL)A)HE/Input/assignment3.jpg')
+givenImage = cv2.imread('/home/sudharshan/Documents/Robotics-and-Visual-Navigation/Contrast Limited Adaptive Histogram Equalization/Input/NightVision.jpg')
 
 # Split the image into b,g,r
 b,g,r = cv2.split(givenImage)
@@ -193,9 +193,7 @@ rH = h*w*nHist(new_r,h,w)
 
 
 equalizedImage = cv2.merge((new_b,new_g,new_r))
-cv2.imshow('e',equalizedImage)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+
 # Display images and their Histogram
 fig, axs = plt.subplots(1, 2, gridspec_kw={'width_ratios': [50,50]})
 fig.set_figheight(4)
@@ -203,12 +201,14 @@ fig.set_figwidth(10)
 
 axs[0].imshow(givenImage)
 axs[0].title.set_text('Given Image')
-
+axs[0].axes.get_yaxis().set_visible(False)
+axs[0].axes.get_xaxis().set_visible(False)
 axs[1].imshow(equalizedImage)
-axs[1].title.set_text('Adaptive Equalized Image')
-
+axs[1].title.set_text('Naive Adaptive Histogram Equalized Image')
+axs[1].axes.get_yaxis().set_visible(False)
+axs[1].axes.get_xaxis().set_visible(False)
 fig.tight_layout()
-plt.savefig('/home/sudharshan/Documents/DeepEigenProjects/A3_Image_Enhancement_((CL)A)HE/InputandOutput/assignment_ahe_images.jpg', dpi=300, bbox_inches='tight')
+plt.savefig('/home/sudharshan/Documents/Robotics-and-Visual-Navigation/Contrast Limited Adaptive Histogram Equalization/InputandOutput/N-AHE/NightVision_NAHE_Images.jpg', dpi=300, bbox_inches='tight')
 plt.show()
 
 
@@ -224,9 +224,9 @@ a[0].title.set_text('Given Image Histogram')
 a[1].plot(bH,color='b')
 a[1].plot(gH,color='g')
 a[1].plot(rH,color='r')
-a[1].title.set_text('Adpative Histogram Equalized Image Histogram')
+a[1].title.set_text('NAHE Image Histogram')
 fig.tight_layout()
-plt.savefig('/home/sudharshan/Documents/DeepEigenProjects/A3_Image_Enhancement_((CL)A)HE/Histograms/assignment_ahe_hist.jpg', dpi=300, bbox_inches='tight')
+plt.savefig('/home/sudharshan/Documents/Robotics-and-Visual-Navigation/Contrast Limited Adaptive Histogram Equalization/Histograms/N-AHE/NightVision_NAHE_HIST.jpg', dpi=300, bbox_inches='tight')
 
 plt.show()
 

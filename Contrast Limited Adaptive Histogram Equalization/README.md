@@ -48,6 +48,13 @@ def cdfunction(hist):
 - Histogram Equalization Distributes the Histogram of Given Image so that the Pixels are distributed to Increase the contrast of the output Image
 - Global Context of Image is Considered ( Every Pixel is manipulated by considering the pixel distribution of the Entire Image)
 - While Enhancing the contrast of the Images, This Global Conext methods also suffers from Noise (Noises will also be enhanced) Example : Salt & Pepper Noise
-- Certain Region will be to bright as a result of Noise Presence
+- Certain Region will be to bright as a result of Noise Presence (To Avoid Enhancing the Noises we Can Use Adaptive Histogram Equalization (NAHE or CLAHE))
+
+## Naive- Adaptive Histogram Equalization (N-AHE)
+- Step 1 : Divide the image into ```n^2``` ```sub images``` (Note ```n``` is an ```HyperParameter```) (usually ```n``` is preferred from ```4``` to ```8```)
+- Step 2 : Compute ```Normalized Histogram```, ```Cumulative Distribution Function``` and ```Transformation Function``` for Each Subimage considering only the pixel values present in that subimage 
+ Note : If we use the transformation function computed per subimage on that subimage alone it leads to Edge Effect as shown below. Inorder to avoid this issue. We will use Bilinear Interpolation to take information about the transformation functions of the the neighbourhood to compute the final Intensity value
+ 
+- Step 3 : Perform Bilinear Interpolation ```S``` = ```y``` X ```(``` ```x``` X ```Td(s)``` + ```(``` ```1 - x``` X ``` Tc(s) ``` ```)```
 
 

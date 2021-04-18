@@ -55,6 +55,6 @@ def cdfunction(hist):
 - Step 2 : Compute ```Normalized Histogram```, ```Cumulative Distribution Function``` and ```Transformation Function``` for Each Subimage considering only the pixel values present in that subimage 
  Note : If we use the transformation function computed per subimage on that subimage alone it leads to Edge Effect as shown below. Inorder to avoid this issue. We will use Bilinear Interpolation to take information about the transformation functions of the the neighbourhood to compute the final Intensity value
  
-- Step 3 : Perform Bilinear Interpolation ```S``` = ```y``` X ```(``` ```x``` X ```Td(s)``` + ```(``` ```1 - x``` X ``` Tc(s) ``` ```)```
+- Step 3 : Perform Bilinear Interpolation ```S``` = ```y```X(```x```X```Td(s)```+```1 - x```X```Tc(s)```) + ```1-y```X(```x```X```Tb(s)``` + ```1-x```X```Ta(s)```)
 
 

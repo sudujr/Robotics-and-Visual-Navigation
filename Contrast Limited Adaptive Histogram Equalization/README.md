@@ -39,4 +39,10 @@ def cdfunction(hist):
 - Step 3 : Compute Transformation FUnction ```T = np.uint8(255 * cdf) ```
 - Step 4 ; Transform the Pixel in an image based on the following relation ```EnhanceImage = T[Original Image]```
 
+## RESULTS 
+
+<p align="center"><img width=80% src="https://github.com/sudujr/Robotics-and-Visual-Navigation/tree/main/Contrast%20Limited%20Adaptive%20Histogram%20Equalization/InputandOutput/HE"></p>
+<p align="center"><img width=80% src="https://github.com/sudujr/Robotics-and-Visual-Navigation/blob/main/Contrast%20Limited%20Adaptive%20Histogram%20Equalization/Media/a9bc9c907620e8a74f6239a33d47bf90.jpg"></p>
+
+
 

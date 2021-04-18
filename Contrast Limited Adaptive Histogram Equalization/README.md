@@ -57,4 +57,7 @@ def cdfunction(hist):
  
 - Step 3 : Perform Bilinear Interpolation ```S``` = ```y```X(```x```X```Td(s)```+```1 - x```X```Tc(s)```) + ```1-y```X(```x```X```Tb(s)``` + ```1-x```X```Ta(s)```)
 
+## RESULTS 
 
+<p align="center"><img width=80% src="https://github.com/sudujr/Robotics-and-Visual-Navigation/blob/main/Contrast%20Limited%20Adaptive%20Histogram%20Equalization/InputandOutput/NAHE/NightVision_NAHE_IMAGES.jpg"></p>
+<p align="center"><img width=80% src="https://github.com/sudujr/Robotics-and-Visual-Navigation/blob/main/Contrast%20Limited%20Adaptive%20Histogram%20Equalization/Histograms/NAHE/NightVision_NAHE_HIST.jpg"></p>

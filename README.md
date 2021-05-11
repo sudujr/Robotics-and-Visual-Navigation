@@ -1,1 +1,1 @@
-# Robotics & VisualNavigation
+# Robotics & Visual Navigation

@@ -69,6 +69,6 @@ def cdfunction(hist):
 - Over Amplification of Noise (This can be minimised by USing CLAHE approach (Another Variant of N-AHE))
 
 ## MISC :
-        ```videoClahe.py``` implements CLAHE to videos (Video Enhancement)
+```videoClahe.py``` implements CLAHE to videos (Video Enhancement)
 
 

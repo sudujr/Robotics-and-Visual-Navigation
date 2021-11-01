@@ -69,7 +69,7 @@ axs[1].title.set_text('Histogram Equalized Image')
 axs[1].axes.get_yaxis().set_visible(False)
 axs[1].axes.get_xaxis().set_visible(False)
 fig.tight_layout()
-plt.savefig('/home/sudharshan/Documents/Robotics-and-Visual-Navigation/Contrast Limited Adaptive Histogram Equalization/InputandOutput/HE/NightVision_HE_IMAGES.jpg', dpi=300, bbox_inches='tight')
+plt.savefig('/home/sudharshan/Documents/Robotics-and-Visual-Navigation/Contrast Limited Adaptive Histogram Equalization/InputandOutput/N-AHE/NightVision_NAHE_Images.jpg', dpi=300, bbox_inches='tight')
 plt.show()
 
 
@@ -87,7 +87,7 @@ a[1].plot(rH,color='r')
 a[1].title.set_text('Histogram Equalized Image Histogram')
 
 fig.tight_layout()
-plt.savefig('/home/sudharshan/Documents/Robotics-and-Visual-Navigation/Contrast Limited Adaptive Histogram Equalization/Histograms/HE/NightVision_HE_HIST.jpg', dpi=300, bbox_inches='tight')
+plt.savefig('/home/sudharshan/Documents/Robotics-and-Visual-Navigation/Contrast Limited Adaptive Histogram Equalization/Histograms/N-AHE/NightVision_NAHE_HIST.jpg', dpi=300, bbox_inches='tight')
 
 plt.show()
 

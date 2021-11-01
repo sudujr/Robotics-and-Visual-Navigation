@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 import copy
 
 #Load the given image
-givenImage = cv2.imread('/home/sudharshan/Documents/DeepEigenProjects/A3_Image_Enhancement_((CL)A)HE/Input/assignment3.jpg')
+givenImage = cv2.imread('/home/sudharshan/Documents/Robotics-and-Visual-Navigation/Contrast Limited Adaptive Histogram Equalization/Input/NightVision.jpg')
 
 # Split the image into b,g,r
 b,g,r = cv2.split(givenImage)

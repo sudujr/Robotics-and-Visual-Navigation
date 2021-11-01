@@ -68,6 +68,7 @@ def cdfunction(hist):
 - Computationally Expensive than ```Histogram Equalization```
 - Over Amplification of Noise (This can be minimised by USing CLAHE approach (Another Variant of N-AHE))
 
-## Video Enhancement 
+## MISC :
+        `videoClahe.py` implements CLAHE to videos (Video Enhancement)
 
 

@@ -85,7 +85,8 @@ def cdfunction(hist):
 ## Inference
 - Applies Histogram Equalization to ```N^2 local context``` images
 - Computationally Expensive than ```Histogram Equalization```
-- Over Amplification of Noise (This can be minimised by USing CLAHE approach (Another Variant of N-AHE))
+- Minimizes over Amplification compared to Naive - Adaptive Histogram Equalization of noises due to Histogram clipping 
+
 
 ## MISC :
 ```videoClahe.py``` implements CLAHE to videos (Video Enhancement)

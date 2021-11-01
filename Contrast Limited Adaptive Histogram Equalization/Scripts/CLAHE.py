@@ -252,7 +252,7 @@ axs[1].imshow(equalizedImage)
 axs[1].title.set_text('CLAHE Image')
 
 fig.tight_layout()
-plt.savefig('/home/sudharshan/Documents/DeepEigenProjects/A3_Image_Enhancement_((CL)A)HE/InputandOutput/assignment_clahe_images.jpg', dpi=300, bbox_inches='tight')
+plt.savefig('/home/sudharshan/Documents/Robotics-and-Visual-Navigation/Contrast Limited Adaptive Histogram Equalization/InputandOutput/CL-AHE/NightVision-CLAHE_imahes', dpi=300, bbox_inches='tight')
 plt.show()
 
 
@@ -270,7 +270,7 @@ a[1].plot(gH,color='g')
 a[1].plot(rH,color='r')
 a[1].title.set_text('CLAHE Image Histogram')
 fig.tight_layout()
-plt.savefig('/home/sudharshan/Documents/DeepEigenProjects/A3_Image_Enhancement_((CL)A)HE/Histograms/assignment_clahe_hist.jpg', dpi=300, bbox_inches='tight')
+plt.savefig('/home/sudharshan/Documents/Robotics-and-Visual-Navigation/Contrast Limited Adaptive Histogram Equalization/Histograms/CL-AHE/NightVision_CLAHE_HIST.jpg', dpi=300, bbox_inches='tight')
 
 plt.show()
 

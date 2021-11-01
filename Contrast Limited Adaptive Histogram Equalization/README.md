@@ -68,6 +68,24 @@ def cdfunction(hist):
 - Computationally Expensive than ```Histogram Equalization```
 - Over Amplification of Noise (This can be minimised by USing CLAHE approach (Another Variant of N-AHE))
 
+## Naive- Adaptive Histogram Equalization (N-AHE)
+- Step 1 : Divide the image into ```n^2``` ```sub images``` (Note ```n``` is an ```HyperParameter```) (usually ```n``` is preferred from ```4``` to ```8```)
+- Step 2 : Compute ```Normalized Histogram```, ```Cumulative Distribution Function``` and ```Transformation Function``` for Each Subimage considering only the pixel values present in that subimage 
+ Note : If we use the transformation function computed per subimage on that subimage alone it leads to Edge Effect as shown below. Inorder to avoid this issue. We will use Bilinear Interpolation to take information about the transformation functions of the the neighbourhood to compute the final Intensity value
+ 
+- Step 3 : Perform Bilinear Interpolation ```S``` = ```y```X(```x```X```Td(s)```+```1 - x```X```Tc(s)```) + ```1-y```X(```x```X```Tb(s)``` + ```1-x```X```Ta(s)```)
+
+## RESULTS 
+
+<p align="center"><img width=80% src="https://github.com/sudujr/Robotics-and-Visual-Navigation/blob/main/Contrast%20Limited%20Adaptive%20Histogram%20Equalization/InputandOutput/CL-AHE/NightVision-CLAHE_imahes.png"></p>
+<p align="center"><img width=80% src="https://github.com/sudujr/Robotics-and-Visual-Navigation/blob/main/Contrast%20Limited%20Adaptive%20Histogram%20Equalization/Histograms/CL-AHE/NightVision_CLAHE_HIST.jpg"></p>
+
+
+## Inference
+- Applies Histogram Equalization to ```N^2 local context``` images
+- Computationally Expensive than ```Histogram Equalization```
+- Over Amplification of Noise (This can be minimised by USing CLAHE approach (Another Variant of N-AHE))
+
 ## MISC :
 ```videoClahe.py``` implements CLAHE to videos (Video Enhancement)
 

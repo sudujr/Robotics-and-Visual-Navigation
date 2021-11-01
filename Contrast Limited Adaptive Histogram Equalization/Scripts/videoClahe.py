@@ -3,7 +3,7 @@ cap = cv2.VideoCapture('/home/sudharshan/Documents/Robotics-and-Visual-Navigatio
 count = 0
 frame_width = int(cap.get(3))
 frame_height = int(cap.get(4))
-out = cv2.VideoWriter('/home/sudharshan/Documents/Robotics-and-Visual-Navigation/Contrast Limited Adaptive Histogram Equalization/Media/enhancedVideo.avi',cv2.VideoWriter_fourcc('M','J','P','G'), 25.0, (frame_width,frame_height))
+out = cv2.VideoWriter('/home/sudharshan/Documents/Robotics-and-Visual-Navigation/Contrast Limited Adaptive Histogram Equalization/Media/enhancedVideo.mov',cv2.VideoWriter_fourcc('M','J','P','G'), 20.0, (frame_width,frame_height))
 while cap.isOpened():
     ret,frame = cap.read()
     

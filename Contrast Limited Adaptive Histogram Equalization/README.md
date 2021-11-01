@@ -67,3 +67,7 @@ def cdfunction(hist):
 - Applies Histogram Equalization to ```N^2 local context``` images
 - Computationally Expensive than ```Histogram Equalization```
 - Over Amplification of Noise (This can be minimised by USing CLAHE approach (Another Variant of N-AHE))
+
+## Video Enhancement 
+
+
